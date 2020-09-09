@@ -12,7 +12,7 @@ const render = eateryCollection => {
             <option value="0">Please select an eatery...</option>
             ${
                 eateryCollection.map((eObj) => {
-                    return `<option id="${eObj.id}" value="${eObj.name}">${eObj.businessName}</option>`
+                    return `<option id="${eObj.id}" value="${eObj.businessName}">${eObj.businessName}</option>`
                 })
             }
         </select>
@@ -22,13 +22,13 @@ const render = eateryCollection => {
 
 const compare = (a, b) => {
 
-    const attractionA = a.businessName.toUpperCase();
-    const attractionB = b.businessName.toUpperCase();
+    const eatery1 = a.businessName.toUpperCase();
+    const eatery2 = b.businessName.toUpperCase();
 
     let comparison = 0;
-    if (attractionA > attractionB) {
+    if (eatery1 > eatery2) {
       comparison = 1;
-    } else if (attractionA < attractionB) {
+    } else if (eatery1 < eatery2) {
       comparison = -1;
     }
     return comparison;
