@@ -11,9 +11,10 @@ eventHub.addEventListener("change", event => {
                 attractionThatWasChosen: event.target.value
             }
         })
-        
+
         eventHub.dispatchEvent(customEvent)
     }
+
 }) 
 
 export const AttractionSelect = () => {
@@ -24,6 +25,7 @@ export const AttractionSelect = () => {
             attractions.sort(compare);
             render(attractions)
         })
+
 }
 
 const render = attractionsCollection => {
@@ -50,10 +52,13 @@ const compare = (a, b) => {
     const attractionB = b.name.toUpperCase();
   
     let comparison = 0;
+    
     if (attractionA > attractionB) {
-      comparison = 1;
+        comparison = 1;
     } else if (attractionA < attractionB) {
-      comparison = -1;
+        comparison = -1;
     }
+    
     return comparison;
-  }
+    
+}
