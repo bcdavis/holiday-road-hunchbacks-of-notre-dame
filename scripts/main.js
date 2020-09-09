@@ -1,3 +1,3 @@
-import { EateryList } from "./eateries/EateryList.js"
+import { AttractionSelect } from "./attractions/AttractionSelect.js"
 
-EateryList()
+AttractionSelect();
