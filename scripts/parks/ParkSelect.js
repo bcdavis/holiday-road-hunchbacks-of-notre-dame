@@ -5,7 +5,6 @@ const eventHub = document.querySelector(".container")
 eventHub.addEventListener("change", event => {
     
     if (event.target.id === "parksDropdown") {
-        console.log("********** Heard a change in the parks dropdown!");
         
         const customEvent = new CustomEvent("parkChosen", {
             detail: {
@@ -37,7 +36,6 @@ const render = parksCollection => {
             <option value="0">Please select a park...</option>
             ${
                 parksCollection.map(parkObj => {
-                    console.log("parkObj, ParkList render", parkObj);
                     return `
                         <option value="${parkObj.parkName}">${parkObj.parkName}</option> 
                     `

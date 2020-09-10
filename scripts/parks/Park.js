@@ -258,11 +258,10 @@
  */
 
 export const ParkHTML = parkObj => {
-  console.log("parkObj, ParkHTML", parkObj);
   return `
       <div class="park">
           <h3>${parkObj.parkThatWasChosen}</h3>
-          <button type="button" class="detailsBtn" id="detailsBtn-attraction">Show Details</button>
+          <button type="button" class="detailsBtn" id="detailsBtn-park">Show Details</button>
       </div>
   `
 }
