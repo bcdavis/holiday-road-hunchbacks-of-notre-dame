@@ -28,11 +28,11 @@ eventHub.addEventListener("click", (event) => {
 
     eventHub.dispatchEvent(customEvent);
   }
-  if (event.target.id === "hideBtn-eatery") {
+  else if (event.target.id === "hideBtn-eatery") {
     let eObj = document.getElementById("eateriesDropdown").value;
     let contentTarget = document.getElementById("eaterySection");
     contentTarget.innerHTML = `
-    <h2>Restruarant</h2>
+    <h2>Restaurant</h2>
     <div class="eatery">
     <h3>${eObj}</h3>
     <button type="button" class="detailsBtn" id="detailsBtn-eatery">Show Details</button>
