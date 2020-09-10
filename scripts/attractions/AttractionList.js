@@ -14,7 +14,7 @@ eventHub.addEventListener("attractionChosen", event => {
 })
 
 export const renderAttractionSection = () => {
-    const domElement = document.querySelector(".preview")
+    const domElement = document.querySelector(".previewContainer")
     domElement.innerHTML += ` 
         <section class="mainPreviewSection" id="attractionSection"></section>
     `
