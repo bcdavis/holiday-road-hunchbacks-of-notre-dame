@@ -9,6 +9,7 @@ import { renderEaterySection } from "./eateries/EateryList.js";
 ParkSelect();
 AttractionSelect();
 EateryList();
+
+renderParkSection();
 renderAttractionSection();
 renderEaterySection();
-renderParkSection();

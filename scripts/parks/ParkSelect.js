@@ -3,13 +3,13 @@ import { useShortParks, getParks } from "./ParkProvider.js"
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("change", event => {
-    console.log("********** Heard a change in the parks dropdown!");
     
     if (event.target.id === "parksDropdown") {
+        console.log("********** Heard a change in the parks dropdown!");
         
         const customEvent = new CustomEvent("parkChosen", {
             detail: {
-                parkThatWasChosen: event.target.value // this v
+                parkThatWasChosen: event.target.value // this value is parkCode
             }
         })
         eventHub.dispatchEvent(customEvent)
@@ -21,7 +21,7 @@ export const ParkSelect = () => {
     
     getParks()
     .then(() => {
-        const parks = useShortParks() // parks = [{fullName, parkCode, parkType}, etc.]
+        const parks = useShortParks() // parks = [{parkName, parkCode, parkType}, etc.]
         //parks.sort(compare);
         render(parks)
     })
@@ -39,7 +39,7 @@ const render = parksCollection => {
                 parksCollection.map(parkObj => {
                     console.log("parkObj, ParkList render", parkObj);
                     return `
-                        <option value="${parkObj.parkCode}">${parkObj.fullName}</option> 
+                        <option value="${parkObj.parkName}">${parkObj.parkName}</option> 
                     `
                 }).join("")
             }

@@ -1,9 +1,9 @@
 import npsAPIkey from "../Settings.js";
 
-let parks; // {"total": X, data: [], limit: "5", start: "0"}
+//let parks; // {"total": X, data: [], limit: "5", start: "0"}
 let parksShortArray = [];
 
-export const useParks = () => parks.slice()
+//export const useParks = () => parks.slice()
 export const useShortParks = () => parksShortArray.slice()
 
 const makeParkObj = (pObj) => {
