@@ -6,7 +6,7 @@ let attractionName;
 
 eventHub.addEventListener("click", event => {
     
-    if (event.target.textContent === "Show Details") {
+    if (event.target.id === "detailsBtn-attraction" && event.target.textContent === "Show Details") {
 
         let targetAttraction = useAttractions().find(attraction => {
             return attraction.name === attractionName;
@@ -28,7 +28,7 @@ eventHub.addEventListener("click", event => {
         event.target.textContent = "Hide Details"
         eventHub.dispatchEvent(customEvent)
 
-    } else if (event.target.textContent === "Hide Details") {
+    } else if (event.target.id === "detailsBtn-attraction" && event.target.textContent === "Hide Details") {
         
         const detailContent = document.querySelector(".shownDetails")
         detailContent.innerHTML = ""
