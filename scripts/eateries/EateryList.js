@@ -25,8 +25,10 @@ const addEateryDetailsToDOM = (eObj) => {
   }
   contentTarget.innerHTML = `
     <div class="eatery">
-        <h3>${eObj.name}</h3>
-        <p class="eateryDescription">Description: ${eObj.description}</p>
+    <h2>Restaurant</h2>
+    <h3>${eObj.name}</h3>
+        <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
+        <p class="eateryDescription">"${eObj.description}"</p>
         <p>Location: ${eObj.city}, ${eObj.state}</p>
         <ul>Ameneties: 
         <li>Wifi: ${eObj.ameneties.wifi}</li>
@@ -36,7 +38,6 @@ const addEateryDetailsToDOM = (eObj) => {
         <li>Wheelchair Accessible: ${eObj.ameneties.wheelchair}</li>
         <li>Diaper Facility: ${eObj.ameneties.diaper}</li>
         </ul>
-        <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
     </div>
 `;
 };
