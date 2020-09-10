@@ -11,7 +11,8 @@ eventHub.addEventListener("change", event => {
         
         const customEvent = new CustomEvent("eateryChosen", {
             detail: {
-                attractionThatWasChosen: event.target.value
+                eateryThatWasChosen: event.target.value,
+                id: event.target.id
             }
         })
 
