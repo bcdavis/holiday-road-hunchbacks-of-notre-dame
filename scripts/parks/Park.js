@@ -260,7 +260,7 @@
 export const ParkHTML = parkObj => {
   return `
       <div class="park">
-          <h3>${parkObj.parkThatWasChosen}</h3>
+          <h4>${parkObj.parkThatWasChosen}</h4>
           <button type="button" class="detailsBtn" id="detailsBtn-park">Show Details</button>
       </div>
   `
