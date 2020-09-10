@@ -1,11 +1,16 @@
 export const addAttractionDetailsToDOM = attractionObj => {
 
     for (const amenety in attractionObj.ameneties) {
-        if (attractionObj.ameneties[amenety] === true) {
-            attractionObj.ameneties[amenety] = "Yes"
+        let currentAmenety = attractionObj.ameneties[amenety]
+        
+        if (currentAmenety === true) {
+            currentAmenety = "Yes"
         } else {
-            attractionObj.ameneties[amenety] = "No"
+            currentAmenety = "No"
         }
+
+        attractionObj.ameneties[amenety] = currentAmenety
+        
     }
 
     const detailsTarget = document.querySelector(".shownDetails")
