@@ -16,7 +16,7 @@ eventHub.addEventListener("eateryDetails", (event) => {
 
 const addEateryDetailsToDOM = (eObj) => {
   const Ameneties = eObj.ameneties;
-  for (const amenety in Stuff) {
+  for (const amenety in Ameneties) {
     let x = Ameneties[amenety];
     Ameneties[amenety] = x
       .toString()
