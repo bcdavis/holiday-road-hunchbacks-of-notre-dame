@@ -19,12 +19,11 @@ eventHub.addEventListener("eateryDetails", event => {
 })
 
 const addEateryDetailsToDOM = (eObj) => {
-    const Stuff = eObj.ameneties
+    const Ameneties = eObj.ameneties
     for (const amenety in Stuff) {
-     let x = Stuff[amenety]
-     Stuff[amenety] = x.toString().replace("true","Yes").replace("false","No") 
+     let x = Ameneties[amenety]
+     Ameneties[amenety] = x.toString().replace("true","Yes").replace("false","No") 
     }
-    console.log("Object After",eObj)
     contentTarget.innerHTML =  `
     <div class="eatery">
         <h3>${eObj.name}</h3>
