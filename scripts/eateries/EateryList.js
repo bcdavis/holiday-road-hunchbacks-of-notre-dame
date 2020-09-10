@@ -1,46 +1,56 @@
-import { getEateries, useEateries } from "./EateryProvider.js"
+import { EateryHTML } from "./Eatery.js";
 
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container");
+let contentTarget;
 
-const contentTarget = document.querySelector(".eateries-list")
-
-
-const render = eateryCollection => {
-    console.log("Rendering Eatery Dropdown")
-    contentTarget.innerHTML = `
-        <select class="dropdown eateriesDropdown" id="eateriesDropdown">
-            <option value="0">Please select an eatery...</option>
-            ${
-                eateryCollection.map((eObj) => {
-                    return `<option id="${eObj.id}" value="${eObj.businessName}">${eObj.businessName}</option>`
-                }).join("")
-            }
-        </select>
-    `
-}
-
-
-const compare = (a, b) => {
-
-    const eatery1 = a.businessName.toUpperCase();
-    const eatery2 = b.businessName.toUpperCase();
-
-    let comparison = 0;
-    if (eatery1 > eatery2) {
-      comparison = 1;
-    } else if (eatery1 < eatery2) {
-      comparison = -1;
-    }
-    return comparison;
+eventHub.addEventListener("eateryChosen", (event) => {
+  if (event.detail.eateryThatWasChosen !== "0") {
+    addEateryToDOM(event.detail);
+  } else {
+    contentTarget.innerHTML = "";
   }
+});
+eventHub.addEventListener("eateryDetails", (event) => {
+  addEateryDetailsToDOM(event.detail);
+});
 
+const addEateryDetailsToDOM = (eObj) => {
+  const Ameneties = eObj.ameneties;
+  for (const amenety in Stuff) {
+    let x = Ameneties[amenety];
+    Ameneties[amenety] = x
+      .toString()
+      .replace("true", "Yes")
+      .replace("false", "No");
+  }
+  contentTarget.innerHTML = `
+    <div class="eatery">
+        <h3>${eObj.name}</h3>
+        <p class="eateryDescription">Description: ${eObj.description}</p>
+        <p>Location: ${eObj.city}, ${eObj.state}</p>
+        <ul>Ameneties: 
+        <li>Wifi: ${eObj.ameneties.wifi}</li>
+        <li>Restrooms: ${eObj.ameneties.restrooms}</li>
+        <li>Pets Allowed: ${eObj.ameneties.pet}</li>
+        <li>Playgrounds: ${eObj.ameneties.playground}</li>
+        <li>Wheelchair Accessible: ${eObj.ameneties.wheelchair}</li>
+        <li>Diaper Facility: ${eObj.ameneties.diaper}</li>
+        </ul>
+        <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
+    </div>
+`;
+};
+export const renderEaterySection = () => {
+  const domElement = document.querySelector(".previewContainer");
+  domElement.innerHTML += ` 
+        <section class="mainPreviewSection" id="eaterySection"></section>
+    `;
+  contentTarget = document.getElementById("eaterySection");
+};
 
-export const EateryList = () => {
-   getEateries()
-    .then(() => {
-        const e = useEateries()
-        e.sort(compare);
-        render(e)
-    })
-
-}
+export const addEateryToDOM = (eObj) => {
+  contentTarget.innerHTML = `
+        <h2>Restaurant</h2>
+            ${EateryHTML(eObj)}
+    `;
+};

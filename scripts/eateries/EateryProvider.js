@@ -1,17 +1,15 @@
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container");
 
-let eateries = []
+let eateries = [];
 
 export const useEateries = () => {
-    return eateries.slice()
-}
+  return eateries.slice();
+};
 
 export const getEateries = () => {
-    return fetch("http://holidayroad.nss.team/eateries")
-        .then(response => response.json())
-        .then(
-            parsedEateries => {
-                eateries = parsedEateries
-            }
-        )
-}
+  return fetch("http://holidayroad.nss.team/eateries")
+    .then((response) => response.json())
+    .then((parsedEateries) => {
+      eateries = parsedEateries;
+    });
+};
