@@ -1,46 +1,21 @@
-import { getEateries, useEateries } from "./EateryProvider.js"
+import { EateryHTML } from "./Eatery.js"
 
 const eventHub = document.querySelector(".container")
+const domElement = document.querySelector(".preview")
 
-const contentTarget = document.querySelector(".eateries-list")
-
-
-const render = eateryCollection => {
-    console.log("Rendering Eatery Dropdown")
-    contentTarget.innerHTML = `
-        <select class="dropdown eateriesDropdown" id="eateriesDropdown">
-            <option value="0">Please select an eatery...</option>
-            ${
-                eateryCollection.map((eObj) => {
-                    return `<option id="${eObj.id}" value="${eObj.businessName}">${eObj.businessName}</option>`
-                }).join("")
-            }
-        </select>
-    `
-}
-
-
-const compare = (a, b) => {
-
-    const eatery1 = a.businessName.toUpperCase();
-    const eatery2 = b.businessName.toUpperCase();
-
-    let comparison = 0;
-    if (eatery1 > eatery2) {
-      comparison = 1;
-    } else if (eatery1 < eatery2) {
-      comparison = -1;
+eventHub.addEventListener("eateryChosen", event => {
+    
+    if (event.detail.eateryThatWasChosen !== "0") {
+        addEateryToDOM(event.detail)
+    } else {
+        domElement.innerHTML = ""
     }
-    return comparison;
-  }
+    
+})
 
-
-export const EateryList = () => {
-   getEateries()
-    .then(() => {
-        const e = useEateries()
-        e.sort(compare);
-        render(e)
-    })
-
+export const addEateryToDOM = attractionObj => {
+    domElement.innerHTML = `
+        <h2>Restruarants</h2>
+            ${EateryHTML(attractionObj)}
+    `
 }
