@@ -1,30 +1,29 @@
-import { EateryHTML } from "./Eatery.js"
+import { EateryHTML } from "./Eatery.js";
 
-const eventHub = document.querySelector(".container")
-let contentTarget 
+const eventHub = document.querySelector(".container");
+let contentTarget;
 
-eventHub.addEventListener("eateryChosen", event => {
-    
-    if (event.detail.eateryThatWasChosen !== "0") {
-        addEateryToDOM(event.detail)
-    } else {
-        contentTarget.innerHTML = ""
-    }
-    
-})
-eventHub.addEventListener("eateryDetails", event => {
-    
-        addEateryDetailsToDOM(event.detail)
-    
-})
+eventHub.addEventListener("eateryChosen", (event) => {
+  if (event.detail.eateryThatWasChosen !== "0") {
+    addEateryToDOM(event.detail);
+  } else {
+    contentTarget.innerHTML = "";
+  }
+});
+eventHub.addEventListener("eateryDetails", (event) => {
+  addEateryDetailsToDOM(event.detail);
+});
 
 const addEateryDetailsToDOM = (eObj) => {
-    const Ameneties = eObj.ameneties
-    for (const amenety in Stuff) {
-     let x = Ameneties[amenety]
-     Ameneties[amenety] = x.toString().replace("true","Yes").replace("false","No") 
-    }
-    contentTarget.innerHTML =  `
+  const Ameneties = eObj.ameneties;
+  for (const amenety in Stuff) {
+    let x = Ameneties[amenety];
+    Ameneties[amenety] = x
+      .toString()
+      .replace("true", "Yes")
+      .replace("false", "No");
+  }
+  contentTarget.innerHTML = `
     <div class="eatery">
         <h3>${eObj.name}</h3>
         <p class="eateryDescription">Description: ${eObj.description}</p>
@@ -40,18 +39,18 @@ const addEateryDetailsToDOM = (eObj) => {
         <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
     </div>
 `;
-}
+};
 export const renderEaterySection = () => {
-    const domElement = document.querySelector(".previewContainer")
-    domElement.innerHTML += ` 
+  const domElement = document.querySelector(".previewContainer");
+  domElement.innerHTML += ` 
         <section class="mainPreviewSection" id="eaterySection"></section>
-    `
-    contentTarget = document.getElementById("eaterySection")
-}
+    `;
+  contentTarget = document.getElementById("eaterySection");
+};
 
-export const addEateryToDOM = eObj => {
-    contentTarget.innerHTML = `
+export const addEateryToDOM = (eObj) => {
+  contentTarget.innerHTML = `
         <h2>Restaurant</h2>
             ${EateryHTML(eObj)}
-    `
-}
+    `;
+};
