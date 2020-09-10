@@ -1,4 +1,5 @@
 import { AttractionHTML } from "./Attraction.js"
+import { addAttractionDetailsToDOM } from "./AttractionDetails.js"
 
 const eventHub = document.querySelector(".container")
 
@@ -12,6 +13,10 @@ eventHub.addEventListener("attractionChosen", event => {
     }
     
 })
+
+eventHub.addEventListener("attractionDetailsToggle", event => {
+    addAttractionDetailsToDOM(event.detail)      
+});
 
 export const renderAttractionSection = () => {
     const domElement = document.querySelector(".previewContainer")
