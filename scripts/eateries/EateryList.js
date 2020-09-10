@@ -19,24 +19,24 @@ eventHub.addEventListener("eateryDetails", event => {
 })
 
 const addEateryDetailsToDOM = (eObj) => {
-    let wifi = eObj.ameneties.wifi.toString().replace("true","Yes").replace("false","No")
-    let pet = eObj.ameneties.pet.toString().replace("true","Yes").replace("false","No")
-    let playground = eObj.ameneties.playground.toString().replace("true","Yes").replace("false","No")
-    let restrooms = eObj.ameneties.restrooms.toString().replace("true","Yes").replace("false","No")
-    let diaper = eObj.ameneties.diaper.toString().replace("true","Yes").replace("false","No")
-    let wheelchair = eObj.ameneties.wheelchair.toString().replace("true","Yes").replace("false","No")
+    const Stuff = eObj.ameneties
+    for (const amenety in Stuff) {
+     let x = Stuff[amenety]
+     Stuff[amenety] = x.toString().replace("true","Yes").replace("false","No") 
+    }
+    console.log("Object After",eObj)
     contentTarget.innerHTML =  `
     <div class="eatery">
         <h3>${eObj.name}</h3>
         <p class="eateryDescription">Description: ${eObj.description}</p>
         <p>Location: ${eObj.city}, ${eObj.state}</p>
         <ul>Ameneties: 
-        <li>Wifi: ${wifi}</li>
-        <li>Restrooms: ${restrooms}</li>
-        <li>Pets Allowed: ${pet}</li>
-        <li>Playgrounds: ${playground}</li>
-        <li>Wheelchair Accessible: ${wheelchair}</li>
-        <li>Diaper Facility: ${diaper}</li>
+        <li>Wifi: ${eObj.ameneties.wifi}</li>
+        <li>Restrooms: ${eObj.ameneties.restrooms}</li>
+        <li>Pets Allowed: ${eObj.ameneties.pet}</li>
+        <li>Playgrounds: ${eObj.ameneties.playground}</li>
+        <li>Wheelchair Accessible: ${eObj.ameneties.wheelchair}</li>
+        <li>Diaper Facility: ${eObj.ameneties.diaper}</li>
         </ul>
         <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
     </div>
@@ -52,7 +52,7 @@ export const renderEaterySection = () => {
 
 export const addEateryToDOM = eObj => {
     contentTarget.innerHTML = `
-        <h2>Restruarant</h2>
+        <h2>Restaurant</h2>
             ${EateryHTML(eObj)}
     `
 }
