@@ -15,7 +15,7 @@ eventHub.addEventListener("parkChosen", event => {
 })
 
 export const renderParkSection = () => {
-    const domElement = document.querySelector(".preview")
+    const domElement = document.querySelector(".previewContainer")
     console.log("rendering park section to DOM");
     domElement.innerHTML += ` 
         <section class="mainPreviewSection" id="parkSection"></section>

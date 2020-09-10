@@ -3,6 +3,7 @@ import { useShortParks, getParks } from "./ParkProvider.js"
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("change", event => {
+    console.log("********** Heard a change in the parks dropdown!");
     
     if (event.target.id === "parksDropdown") {
         
@@ -11,7 +12,6 @@ eventHub.addEventListener("change", event => {
                 parkThatWasChosen: event.target.value // this v
             }
         })
-
         eventHub.dispatchEvent(customEvent)
     }
 
