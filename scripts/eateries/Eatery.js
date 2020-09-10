@@ -27,8 +27,7 @@ eventHub.addEventListener("click", (event) => {
     });
 
     eventHub.dispatchEvent(customEvent);
-  }
-  else if (event.target.id === "hideBtn-eatery") {
+  } else if (event.target.id === "hideBtn-eatery") {
     let eObj = document.getElementById("eateriesDropdown").value;
     let contentTarget = document.getElementById("eaterySection");
     contentTarget.innerHTML = `
