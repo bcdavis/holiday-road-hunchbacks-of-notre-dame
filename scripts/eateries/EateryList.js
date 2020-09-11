@@ -16,7 +16,7 @@ eventHub.addEventListener("eateryDetails", (event) => {
 });
 
 const addEateryDetailsToDOM = (eObj) => {
-    contentTarget = document.getElementById("eaterySection");
+    contentTarget = document.querySelector(".eatery");
     const Ameneties = eObj.ameneties;
   for (const amenety in Ameneties) {
     let x = Ameneties[amenety];
@@ -26,8 +26,6 @@ const addEateryDetailsToDOM = (eObj) => {
       .replace("false", "No");
   }
   contentTarget.innerHTML = `
-    <h3>Restaurant</h3>
-    <div class="eatery">
     <h4 class="eateryPicked">${eObj.name}</h4>
         <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
         <p class="eateryDescription">"${eObj.description}"</p>
