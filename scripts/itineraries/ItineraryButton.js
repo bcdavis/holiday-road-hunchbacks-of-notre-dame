@@ -38,7 +38,11 @@ eventHub.addEventListener("click", clickEvent => {
             menu.value = '0';
         }
 
-        document.querySelector(".previewContent").innerHTML = "";
+        const previewAreas = document.getElementsByClassName("mainPreviewSection")
+        for (const area of previewAreas) {
+            area.innerHTML = "";
+        }
+
         document.querySelector("#saveBtn").disabled = true;
 
     }
