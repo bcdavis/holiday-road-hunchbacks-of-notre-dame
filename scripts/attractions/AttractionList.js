@@ -5,7 +5,6 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("attractionChosen", event => {
     const contentTarget = document.querySelector("#attractionSection")
-
     if (event.detail.attractionThatWasChosen !== "0") {
         addAttractionToDOM(event.detail)
     } else {
@@ -19,7 +18,7 @@ eventHub.addEventListener("attractionDetailsToggle", event => {
 });
 
 export const renderAttractionSection = () => {
-    const domElement = document.querySelector(".previewContainer")
+    const domElement = document.querySelector(".previewContent")
     domElement.innerHTML += ` 
         <section class="mainPreviewSection" id="attractionSection"></section>
     `
@@ -28,7 +27,7 @@ export const renderAttractionSection = () => {
 const addAttractionToDOM = attractionObj => {
     const contentTarget = document.querySelector("#attractionSection")
     contentTarget.innerHTML = `
-        <h2>Attractions</h2>
+        <h3>Attractions</h3>
         ${AttractionHTML(attractionObj)}
     `
 }
