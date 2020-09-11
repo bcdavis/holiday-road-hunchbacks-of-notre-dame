@@ -1,17 +1,20 @@
 /* ----------  Global and Body Css ---------- */
 
 body, html {
+    height: 86%;
     margin: 0;
     padding: 0;
+    background: gainsboro;
+    color: black;
 }
 
 
 header {
     display: flex;
-    background-color: darkgrey;
+    background-color: gainsboro;
     padding-top: 25px;
     padding-bottom: 25px;
-
+    color: mediumseagreen;
 }
 
 header > img {
@@ -29,8 +32,9 @@ header > h1 {
 footer { 
     display: flex;
     justify-content: center;
-    background-color: darkgrey;
+    background-color: gainsboro;
     height: 100px;
+    color: mediumseagreen;
 }
 
 footer > p {
@@ -45,6 +49,7 @@ footer > p {
 /* ------------- Main Css ------------- */
 
 .container { 
+    height: 100%;
     border: red dotted 2px;
     display: flex;
 }
@@ -93,6 +98,15 @@ footer > p {
     margin: 10px auto;
 }
 
+
+.eateryDescription {
+   float: right;
+   clear: right;
+   width: 50%;
+   overflow: auto;
+   border: ridge black 1px;
+}
+
 .attractions-list {
     border: black dotted 2px;
     height: 25px;
@@ -100,6 +114,13 @@ footer > p {
     margin: 10px auto;
 }
 
+.attractionDescription {
+    float: right;
+    clear: right;
+    width: 50%;
+    overflow: auto;
+    border: ridge black 1px;
+}
  .mainPreviewSection {
     margin-left: 20px;
     margin-right: 20px;
@@ -110,6 +131,7 @@ footer > p {
 }
 
 .previewContainer {
+    overflow: auto;
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -122,8 +144,17 @@ footer > p {
     margin: 10px;
     text-align: center;
 }
+.previewText {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background: gainsboro;
+}
 
 
+.eatery {
+    overflow: auto;
+}
 
 
 /* -------------- Saved Itineraries Aside --------------- */
@@ -138,6 +169,7 @@ footer > p {
     align-items: center;
     border: darkcyan solid 2px;
     width: 100%;
+    background: mediumspringgreen;
     /* float: right; */
 }
 
