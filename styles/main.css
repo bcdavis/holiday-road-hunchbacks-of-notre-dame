@@ -1,4 +1,31 @@
-/* ----------  Global and Body Css ---------- */
+/* ----------  Global and Body CSS ---------- */
+
+:root {
+    --accent-Color: rgb(62, 169, 130); /* ---- Custom green accent color ---- */
+}
+
+/* 
+The follwoing style affects the parent element of the current element 
+that should have an offset green accent on the bottom and right 
+side of the current element. The parent is translated down and to the 
+right and colored with the --accent-Color variable.
+*/
+.offsetAccentBox { 
+    transform: translate(8px, 4px); /* move down 8px and to the right 4 px*/
+    background-color: var(--accent-Color); /* color box accent green */
+}
+
+/*
+This style affects the current element that should have a fancy bottom-right 
+offset border. The current element counters its parent's offset by translating
+an equal value in the opposite direction. This keeps the current element in it's
+original, styled position while the accent is moved. 
+*/
+.offsetCounterBox {
+    transform: translate(-8px, -4px); /* move down 8px and to the right 4 px*/
+}
+
+
 
 body, html {
     margin: 0;
@@ -8,7 +35,7 @@ body, html {
 
 header {
     display: flex;
-    background-color: darkgrey;
+    background-color: lightgrey;
     padding-top: 25px;
     padding-bottom: 25px;
 
@@ -29,7 +56,7 @@ header > h1 {
 footer { 
     display: flex;
     justify-content: center;
-    background-color: darkgrey;
+    background-color: lightgrey;
     height: 100px;
 }
 
@@ -45,7 +72,7 @@ footer > p {
 /* ------------- Main Css ------------- */
 
 .container { 
-    border: red dotted 2px;
+    /* border: red dotted 2px; */
     display: flex;
 }
 
@@ -61,14 +88,27 @@ footer > p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: green solid 2px;
+    /* border: green solid 2px; */
     /* float: left; */
 }
 
 .formTitle { 
     margin-left: auto;
     margin-right: auto;
-    margin: 10px;
+    margin-top: 20px;
+   
+}
+
+.formTitle > h2 { 
+    margin-top: 10px;
+    padding-bottom: 4px;
+    border-bottom: 3px var(--accent-Color) solid;
+}
+
+.dropdown {
+    /* transform: translate(-8px, -4px); */
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 .selectorContainer { 
@@ -80,50 +120,71 @@ footer > p {
 }
 
 .parks-list {
-    border: black dotted 2px;
-    height: 25px;
-    max-width: 300px;
+    /* transform: translate(8px, 4px); */
+    /* background-color: var(--accent-Color); */
+    /* border: black dotted 2px; */
+    max-width: 350px;
     margin: 10px auto;
 }
 
 .eateries-list {
-    border: black dotted 2px;
-    height: 25px;
-    max-width: 300px;
+    /* transform: translate(8px, 4px); */
+    /* background-color: var(--accent-Color); */
+    /* border: black dotted 2px; */
+    /* height: 25px; */
+    max-width: 350px;
     margin: 10px auto;
 }
 
 .attractions-list {
-    border: black dotted 2px;
-    height: 25px;
-    max-width: 300px;
+    /* transform: translate(8px, 4px); */
+    /* background-color: var(--accent-Color); */
+    /* border: black dotted 2px; */
+    /* height: 25px; */
+    max-width: 350px;
     margin: 10px auto;
 }
 
- .mainPreviewSection {
+/* ---- Preview section */
+
+.mainPreviewSection {
     margin-left: 20px;
     margin-right: 20px;
 }
 
 .mainPreviewSection > h3{
-    border-bottom: 3px black solid;
+    border-bottom: 3px var(--accent-Color) solid;
 }
 
 .previewContainer {
     display: flex;
     flex-direction: column;
     align-items: left;
-    border: forestgreen solid 2px;
-    /* clear: both; */
+    /* border: forestgreen solid 2px; */
+    min-height: 400px;
 
 }
 
 .previewContainer > h2 { 
     margin: 10px;
-    text-align: center;
+    align-self: center;
+    padding-bottom: 4px;
+    border-bottom: 3px solid var(--accent-Color);
 }
 
+.previewContent { 
+    margin: 10px;
+    margin-left: 20px;
+    border-left: 3px solid var(--accent-Color);
+    height: 200px;
 
+}
+
+#saveItBtn {
+    align-self: center;
+    width: 100px;
+
+}
 
 
 /* -------------- Saved Itineraries Aside --------------- */
@@ -131,14 +192,15 @@ footer > p {
 .flex-right { 
     display: flex;
     flex: 3 1 40%;
+    color: white;
 }
 .savedItineraries {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: darkcyan solid 2px;
+    background-color: var(--accent-Color);
+    border: white solid 20px;
     width: 100%;
-    /* float: right; */
 }
 
 .savedItineraries > h2 {

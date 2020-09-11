@@ -32,7 +32,7 @@ const render = parksCollection => {
     const contentTarget = document.querySelector(".parks-list")
     
     contentTarget.innerHTML = `
-        <select class="dropdown" id="parksDropdown">
+        <select class="dropdown offsetCounterBox" id="parksDropdown">
             <option value="0">Please select a park...</option>
             ${
                 parksCollection.map(parkObj => {
