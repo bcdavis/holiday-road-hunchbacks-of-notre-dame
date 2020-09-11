@@ -58,3 +58,4 @@ export const addEateryToDOM = (eObj) => {
             ${EateryHTML(eObj)}
     `;
 };
+
