@@ -28,8 +28,11 @@ original, styled position while the accent is moved.
 
 
 body, html {
+    height: 86%;
     margin: 0;
     padding: 0;
+    background: gainsboro;
+    color: black;
 }
 
 
@@ -38,7 +41,7 @@ header {
     background-color: lightgrey;
     padding-top: 25px;
     padding-bottom: 25px;
-
+    color: mediumseagreen;
 }
 
 header > img {
@@ -58,6 +61,7 @@ footer {
     justify-content: center;
     background-color: lightgrey;
     height: 100px;
+    color: mediumseagreen;
 }
 
 footer > p {
@@ -72,6 +76,8 @@ footer > p {
 /* ------------- Main Css ------------- */
 
 .container { 
+    /* border: red dotted 2px; */
+    /* height: 100%; */
     /* border: red dotted 2px; */
     display: flex;
 }
@@ -129,6 +135,15 @@ footer > p {
     margin: 10px auto;
 }
 
+
+.eateryDescription {
+   float: right;
+   clear: right;
+   width: 50%;
+   overflow: auto;
+   border: ridge black 1px;
+}
+
 .attractions-list {
     /* border: black dotted 2px; */
     max-width: 350px;
@@ -149,7 +164,15 @@ footer > p {
 
 }
 
-.mainPreviewSection {
+.attractionDescription {
+    float: right;
+    clear: right;
+    width: 50%;
+    overflow: auto;
+    border: ridge black 1px;
+}
+
+ .mainPreviewSection {
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -163,6 +186,7 @@ footer > p {
     align-self: center;
     padding-bottom: 4px;
     border-bottom: 3px solid var(--accent-Color);
+    overflow: auto;
 }
 
 .previewContent { 
@@ -174,6 +198,13 @@ footer > p {
 
 .indent {
     margin-left: 20px;
+}
+
+.previewText {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background: gainsboro;
 }
 
 .fancyDetails { 
