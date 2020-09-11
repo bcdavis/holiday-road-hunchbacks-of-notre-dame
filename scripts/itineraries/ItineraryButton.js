@@ -39,6 +39,7 @@ eventHub.addEventListener("click", clickEvent => {
         }
 
         document.querySelector(".previewContent").innerHTML = "";
+        document.querySelector("#saveBtn").disabled = true;
 
     }
 })
