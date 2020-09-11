@@ -1,3 +1,16 @@
 {
-	"itineraries": []
+  "itineraries": [
+    {
+      "park": "Acadia National Park",
+      "attraction": "Death Rock of Alexander Hamilton",
+      "eatery": "Hancock Inn",
+      "id": 1
+    },
+    {
+      "park": "Adams National Historical Park",
+      "attraction": "Elvis Memorial Chapel",
+      "eatery": "Gene & Jude's",
+      "id": 2
+    }
+  ]
 }
