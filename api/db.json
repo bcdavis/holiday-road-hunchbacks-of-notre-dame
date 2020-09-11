@@ -17,6 +17,18 @@
       "attraction": "Chicken Wire Minnie Pearl",
       "eatery": "Cattlemen's Steakhouse",
       "id": 3
+    },
+    {
+      "park": "Abraham Lincoln Birthplace National Historical Park",
+      "attraction": "Avery’s Beverages",
+      "eatery": "Big Bob Gibson Bar-B-Que",
+      "id": 4
+    },
+    {
+      "park": "African Burial Ground National Monument",
+      "attraction": "Coffee Pot-Shaped Building",
+      "eatery": "Commander's Palace",
+      "id": 5
     }
   ]
 }

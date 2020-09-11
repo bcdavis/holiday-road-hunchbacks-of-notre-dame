@@ -31,7 +31,7 @@ body, html {
     height: 86%;
     margin: 0;
     padding: 0;
-    background: gainsboro;
+    /* background: gainsboro; */
     color: black;
 }
 
@@ -41,7 +41,7 @@ header {
     background-color: lightgrey;
     padding-top: 25px;
     padding-bottom: 25px;
-    color: mediumseagreen;
+    /* color: mediumseagreen; */
 }
 
 header > img {
@@ -61,7 +61,7 @@ footer {
     justify-content: center;
     background-color: lightgrey;
     height: 100px;
-    color: mediumseagreen;
+    /* color: mediumseagreen; */
 }
 
 footer > p {
@@ -165,10 +165,11 @@ footer > p {
 }
 
 .attractionDescription {
+    transform: translate(0px,-100px);
     float: right;
     clear: right;
     width: 50%;
-    overflow: auto;
+    /* overflow: auto; */
     border: ridge black 1px;
 }
 
@@ -200,11 +201,9 @@ footer > p {
     margin-left: 20px;
 }
 
-.previewText {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    background: gainsboro;
+.shownDetails {
+    background-color: lightsalmon;
+
 }
 
 .fancyDetails { 
