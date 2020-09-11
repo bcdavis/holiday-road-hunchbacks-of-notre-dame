@@ -13,7 +13,6 @@ eventHub.addEventListener("change", event => {
         })
         eventHub.dispatchEvent(customEvent)
     }
-
 }) 
 
 export const ParkSelect = () => {
@@ -21,10 +20,8 @@ export const ParkSelect = () => {
     getParks()
     .then(() => {
         const parks = useShortParks() // parks = [{parkName, parkCode, parkType}, etc.]
-        //parks.sort(compare);
         render(parks)
     })
-
 }
 
 const render = parksCollection => {
@@ -45,19 +42,14 @@ const render = parksCollection => {
     `;
 }
 
-const compare = (a, b) => {
-    
+const compare = (a, b) => { 
     const itemA = a.name.toUpperCase();
     const itemB = b.name.toUpperCase();
-  
-    let comparison = 0;
-    
+    let comparison = 0;  
     if (itemA > itemB) {
         comparison = 1;
     } else if (itemA < itemB) {
         comparison = -1;
     }
-    
     return comparison;
-    
 }

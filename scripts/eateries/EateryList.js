@@ -25,7 +25,7 @@ const addEateryDetailsToDOM = (eObj) => {
   }
   contentTarget.innerHTML = `
     <div class="eatery">
-        <h3>${eObj.name}</h3>
+        <h4>${eObj.name}</h4>
         <p class="eateryDescription">Description: ${eObj.description}</p>
         <p>Location: ${eObj.city}, ${eObj.state}</p>
         <ul>Ameneties: 
@@ -50,7 +50,7 @@ export const renderEaterySection = () => {
 
 export const addEateryToDOM = (eObj) => {
   contentTarget.innerHTML = `
-        <h2>Restaurant</h2>
+        <h3>Restaurant</h3>
             ${EateryHTML(eObj)}
     `;
 };

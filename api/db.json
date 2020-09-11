@@ -11,6 +11,12 @@
       "attraction": "Elvis Memorial Chapel",
       "eatery": "Gene & Jude's",
       "id": 2
+    },
+    {
+      "park": "Adams National Historical Park",
+      "attraction": "Chicken Wire Minnie Pearl",
+      "eatery": "Cattlemen's Steakhouse",
+      "id": 3
     }
   ]
 }

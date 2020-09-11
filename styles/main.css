@@ -135,7 +135,19 @@ footer > p {
     margin: 10px auto;
 }
 
-/* ---- Preview section ---- */
+/* ---------------- Preview section ------------------ */
+
+.previewContainer {
+    background-color: rgb(237, 237, 237);
+    display: flex;
+    flex-direction: column;
+    /* align-items: left; */
+    /* border: forestgreen solid 2px; */
+    /* min-height: 400px; */
+    margin: 20px;
+    padding-bottom: 10px;
+
+}
 
 .mainPreviewSection {
     margin-left: 20px;
@@ -144,15 +156,6 @@ footer > p {
 
 .mainPreviewSection > h3{
     border-bottom: 3px var(--accent-Color) solid;
-}
-
-.previewContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    /* border: forestgreen solid 2px; */
-    min-height: 400px;
-
 }
 
 .previewContainer > h2 { 
@@ -165,14 +168,23 @@ footer > p {
 .previewContent { 
     margin: 10px;
     margin-left: 20px;
-    border-left: 3px solid var(--accent-Color);
-    height: 200px;
+    /* border-left: 3px solid var(--accent-Color); */
+    min-height: 400px;
+}
 
+.indent {
+    margin-left: 20px;
+}
+
+.fancyDetails { 
+        border-left: 4px solid var(--accent-Color);
+    padding-left: 20px;
 }
 
 #saveBtn {
     align-self: center;
     width: 100px;
+    /* background-color: var(--accent-Color); */
 
 }
 
@@ -189,7 +201,8 @@ footer > p {
     flex-direction: column;
     align-items: center;
     background-color: var(--accent-Color);
-    border: white solid 20px;
+    margin: 20px;
+    padding: 20px;
     width: 100%;
 }
 

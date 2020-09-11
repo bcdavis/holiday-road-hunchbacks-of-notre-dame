@@ -258,7 +258,7 @@
 
 export const ParkHTML = parkObj => {
   return `
-      <div class="park">
+      <div class="indent park">
           <h4>${parkObj.parkThatWasChosen}</h4>
           <button type="button" class="detailsBtn" id="detailsBtn-park">Show Details</button>
       </div>

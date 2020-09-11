@@ -40,7 +40,7 @@ eventHub.addEventListener("click", event => {
 export const AttractionHTML = attractionObj => {
     attractionName = attractionObj.attractionThatWasChosen
     return `
-        <div class="attraction">
+        <div class="indent attraction">
             <h4>${attractionName}</h4>
             <button type="button" class="detailsBtn" id="detailsBtn-attraction">Show Details</button>
             <div class="shownDetails"></div>
