@@ -26,9 +26,9 @@ const addEateryDetailsToDOM = (eObj) => {
       .replace("false", "No");
   }
   contentTarget.innerHTML = `
+    <h3>Restaurant</h3>
     <div class="eatery">
-    <h2>Restaurant</h2>
-    <h3 class="eateryPicked">${eObj.name}</h3>
+    <h4 class="eateryPicked">${eObj.name}</h4>
         <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
         <p class="eateryDescription">"${eObj.description}"</p>
         <p>Location: ${eObj.city}, ${eObj.state}</p>
@@ -54,7 +54,7 @@ export const renderEaterySection = () => {
 export const addEateryToDOM = (eObj) => {
     contentTarget = document.getElementById("eaterySection");
       contentTarget.innerHTML = `
-        <h2>Restaurant</h2>
+        <h3>Restaurant</h3>
             ${EateryHTML(eObj)}
     `;
 };
