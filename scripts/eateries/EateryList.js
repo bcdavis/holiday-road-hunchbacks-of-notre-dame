@@ -44,7 +44,7 @@ const addEateryDetailsToDOM = (eObj) => {
 `;
 };
 export const renderEaterySection = () => {
-  const domElement = document.querySelector(".previewContainer");
+  const domElement = document.querySelector(".previewContent");
   domElement.innerHTML += ` 
         <section class="mainPreviewSection" id="eaterySection"></section>
     `;
