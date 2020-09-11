@@ -23,4 +23,4 @@ const addItinerariesToAside = arrayOfItineraries => {
 }
 
 
-eventHub.addEventListener("itineraryStateChanged", () => ItineraryList())
+eventHub.addEventListener("itineraryStateChanged", () => addItinerariesToAside(useItineraries()))
