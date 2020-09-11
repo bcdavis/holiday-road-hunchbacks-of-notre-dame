@@ -41,7 +41,7 @@ export const AttractionHTML = attractionObj => {
     attractionName = attractionObj.attractionThatWasChosen
     return `
         <div class="attraction">
-            <h3>${attractionName}</h3>
+            <h4>${attractionName}</h4>
             <button type="button" class="detailsBtn" id="detailsBtn-attraction">Show Details</button>
             <div class="shownDetails"></div>
         </div>
