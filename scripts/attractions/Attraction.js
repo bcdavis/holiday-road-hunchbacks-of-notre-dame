@@ -18,7 +18,7 @@ eventHub.addEventListener("click", event => {
                 state: targetAttraction.state,
                 city: targetAttraction.city,
                 description: targetAttraction.description,
-                ameneties: {
+                amenities: {
                     souvenirs: targetAttraction.ameneties.souvenirs,
                     restrooms: targetAttraction.ameneties.restrooms
                 }
