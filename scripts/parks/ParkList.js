@@ -24,6 +24,9 @@ const addParkToDOM = parkObj => {
     const contentTarget = document.querySelector("#parkSection")
     contentTarget.innerHTML = `
         <h3>Parks</h3>
-        ${ParkHTML(parkObj)}
+        <div class="parkInfo">
+            ${ParkHTML(parkObj)}
+        </div>
+        <div class="parkWeather"></class>
     `
 }
