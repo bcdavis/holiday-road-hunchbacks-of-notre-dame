@@ -123,6 +123,18 @@ footer > p {
     margin-bottom: 50px;
 }
 
+.states-list { 
+    /* border: black dotted 2px; */
+    max-width: 350px;
+    margin: 10px auto;
+}
+
+#statesDropdown { 
+    /* border: black dotted 2px; */
+    max-width: 350px;
+    margin: 10px auto;
+}
+
 .parks-list {
     /* border: black dotted 2px; */
     max-width: 350px;
@@ -165,10 +177,10 @@ footer > p {
 }
 
 .attractionDescription {
-    transform: translate(0px,-100px);
-    float: right;
-    clear: right;
-    width: 50%;
+    /* transform: translate(0px,-100px); */
+    /* float: right; */
+    /* clear: right; */
+    /* width: 50%; */
     /* overflow: auto; */
     border: ridge black 1px;
 }
@@ -197,17 +209,37 @@ footer > p {
     min-height: 400px;
 }
 
+.parkPreview {
+    display: flex;
+}
+
+
+.parkInfo {
+    /* border: red dotted 2px; */
+    /* padding: 5px; */
+    flex: 1 1 50%;
+}
+
+.parkWeather {
+    /* border: blue dotted 2px; */
+    padding: 5px;
+    flex: 1 1 50%;
+}
+
 .indent {
     margin-left: 20px;
 }
 
+.park > h4 {
+    margin-top: 5px;
+}
+
 .shownDetails {
     background-color: lightsalmon;
-
 }
 
 .fancyDetails { 
-        border-left: 4px solid var(--accent-Color);
+    border-left: 4px solid var(--accent-Color);
     padding-left: 20px;
 }
 

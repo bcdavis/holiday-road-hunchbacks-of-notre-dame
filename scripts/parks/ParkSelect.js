@@ -1,44 +1,64 @@
-import { useShortParks, getParks } from "./ParkProvider.js"
+import { useParks, getParksByState } from "./ParkProvider.js"
+
 
 const eventHub = document.querySelector(".container")
+let parks;
 
 eventHub.addEventListener("change", event => {
-    
     if (event.target.id === "parksDropdown") {
-        
+        //let temp = useParks()
+        console.log(event);
+        let targetPark = parks.find(prk => {
+            return prk.fullName === event.target.value
+        })
         const customEvent = new CustomEvent("parkChosen", {
             detail: {
-                parkThatWasChosen: event.target.value // this value is parkCode
+                parkThatWasChosen: event.target.value, // this value is parkName
+                lat: targetPark.latitude,
+                long: targetPark.longitude
             }
         })
         eventHub.dispatchEvent(customEvent)
     }
 }) 
 
-export const ParkSelect = () => {
+eventHub.addEventListener("stateChosen", event => {
+    if(event.detail.stateThatWasChosen !== "0"){
+        console.log("is a state");
+        //debugger;
+        document.querySelector("#parksDropdown").disabled = false;
+        ParkSelect(event.detail.stateThatWasChosen);
+    }
+    else {
+        console.log("not a state");
+        document.querySelector("#parksDropdown").disabled = true;
+    }
+})
+
+export const ParkSelect = (selectedState) => {
     
-    getParks()
+    //getParks()
+    console.log(selectedState);
+    getParksByState(selectedState)
     .then(() => {
-        const parks = useShortParks() // parks = [{parkName, parkCode, parkType}, etc.]
-        render(parks)
+        parks = useParks() // parks = [{parkName, parkCode, parkType}, etc.]
+        renderParksSelector(parks)
     })
 }
 
-const render = parksCollection => {
+const renderParksSelector = parksCollection => {
 
-    const contentTarget = document.querySelector(".parks-list")
-    
+    const contentTarget = document.querySelector("#parksDropdown")
+    console.log(parksCollection);
     contentTarget.innerHTML = `
-        <select class="dropdown offsetCounterBox" id="parksDropdown">
-            <option value="0">Please select a park...</option>
-            ${
-                parksCollection.map(parkObj => {
-                    return `
-                        <option value="${parkObj.parkName}">${parkObj.parkName}</option> 
-                    `
-                }).join("")
-            }
-        </select>
+        <option value="0">Please select a park...</option>
+        ${
+            parksCollection.map(parkObj => {
+                return `
+                    <option value="${parkObj.fullName}">${parkObj.fullName}</option> 
+                `
+            }).join("")
+        }
     `;
 }
 

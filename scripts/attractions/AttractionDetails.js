@@ -13,7 +13,7 @@ export const addAttractionDetailsToDOM = attractionObj => {
         
     }
 
-    const detailsTarget = document.querySelector(".shownDetails")
+    const detailsTarget = document.querySelector(".shownDetails-attraction")
 
     detailsTarget.innerHTML = `
         <p class="fancyDetails attractionDescription">"${attractionObj.description}"</p>
