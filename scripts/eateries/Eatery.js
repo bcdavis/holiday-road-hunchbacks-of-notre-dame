@@ -31,7 +31,7 @@ eventHub.addEventListener("click", (event) => {
     let eObj = document.getElementById("eateriesDropdown").value;
     let contentTarget = document.getElementById("eaterySection");
     contentTarget.innerHTML = `<h3>Restaurant</h3>
-    <div class="eatery">
+    <div class="indent eatery">
     <h4>${eObj}</h4>
     <button type="button" class="detailsBtn" id="detailsBtn-eatery">Show Details</button>
     </div>`;
@@ -41,7 +41,7 @@ eventHub.addEventListener("click", (event) => {
 export const EateryHTML = (eObj) => {
   eateryid = eObj.eateryThatWasChosen;
   return `
-        <div class="eatery">
+        <div class="indent eatery">
             <h4>${eObj.eateryThatWasChosen}</h4>
             <button type="button" class="detailsBtn" id="detailsBtn-eatery">Show Details</button>
         </div>

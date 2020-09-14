@@ -1,63 +1,54 @@
-import { useShortParks, getParks } from "./ParkProvider.js"
+import { useParks, getParksByState } from "./ParkProvider.js"
+
 
 const eventHub = document.querySelector(".container")
+let parks;
 
 eventHub.addEventListener("change", event => {
-    
     if (event.target.id === "parksDropdown") {
-        
+        let targetPark = parks.find(prk => {
+            return prk.fullName === event.target.value
+        })
         const customEvent = new CustomEvent("parkChosen", {
             detail: {
-                parkThatWasChosen: event.target.value // this value is parkCode
+                parkThatWasChosen: event.target.value, // this value is parkName
+                lat: targetPark.latitude,
+                long: targetPark.longitude
             }
         })
         eventHub.dispatchEvent(customEvent)
     }
-
 }) 
 
-export const ParkSelect = () => {
-    
-    getParks()
-    .then(() => {
-        const parks = useShortParks() // parks = [{parkName, parkCode, parkType}, etc.]
-        //parks.sort(compare);
-        render(parks)
-    })
-
-}
-
-const render = parksCollection => {
-
-    const contentTarget = document.querySelector(".parks-list")
-    
-    contentTarget.innerHTML = `
-        <select class="dropdown" id="parksDropdown">
-            <option value="0">Please select a park...</option>
-            ${
-                parksCollection.map(parkObj => {
-                    return `
-                        <option value="${parkObj.parkName}">${parkObj.parkName}</option> 
-                    `
-                }).join("")
-            }
-        </select>
-    `;
-}
-
-const compare = (a, b) => {
-    
-    const itemA = a.name.toUpperCase();
-    const itemB = b.name.toUpperCase();
-  
-    let comparison = 0;
-    
-    if (itemA > itemB) {
-        comparison = 1;
-    } else if (itemA < itemB) {
-        comparison = -1;
+eventHub.addEventListener("stateChosen", event => {
+    if(event.detail.stateThatWasChosen !== "0"){
+        document.querySelector("#parksDropdown").disabled = false;
+        ParkSelect(event.detail.stateThatWasChosen);
     }
-    
-    return comparison;
-    
+    else {
+        document.querySelector("#parksDropdown").disabled = true;
+    }
+})
+
+export const ParkSelect = (selectedState) => {
+    getParksByState(selectedState)
+    .then(() => {
+        parks = useParks()
+        renderParksSelector(parks)
+    })
+}
+
+const renderParksSelector = parksCollection => {
+
+    const contentTarget = document.querySelector("#parksDropdown")
+    contentTarget.innerHTML = `
+        <option value="0">Please select a park...</option>
+        ${
+            parksCollection.map(parkObj => {
+                return `
+                    <option value="${parkObj.fullName}">${parkObj.fullName}</option> 
+                `
+            }).join("")
+        }
+    `;
 }
