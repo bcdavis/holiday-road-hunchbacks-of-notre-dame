@@ -5,7 +5,7 @@ const eventHub = document.querySelector(".container")
 let parks;
 
 eventHub.addEventListener("change", event => {
-    if (event.target.id === "parksDropdown") {
+    if (event.target.id === "parksDropdown" && event.target.value !== "0") {
         let targetPark = parks.find(prk => {
             return prk.fullName === event.target.value
         })
@@ -18,6 +18,10 @@ eventHub.addEventListener("change", event => {
         })
         eventHub.dispatchEvent(customEvent)
     }
+    else if (event.target.id === "parksDropdown" && event.target.value === "0") {
+        const parksSectionTarget = document.querySelector("#parkSection")
+        parksSectionTarget.innerHTML = "";
+    }
 }) 
 
 eventHub.addEventListener("stateChosen", event => {
@@ -27,6 +31,9 @@ eventHub.addEventListener("stateChosen", event => {
     }
     else {
         document.querySelector("#parksDropdown").disabled = true;
+        const parksSectionTarget = document.querySelector("#parkSection")
+        parksSectionTarget.innerHTML = "";
+        document.querySelector("#parksDropdown").value = "0"; // reset dropdown
     }
 })
 
