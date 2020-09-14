@@ -7,6 +7,7 @@ import { renderAttractionSection } from "./attractions/AttractionList.js";
 import { renderEaterySection } from "./eateries/EateryList.js";
 import { ItineraryList } from "./itineraries/ItineraryList.js";
 import { SaveButton } from "./itineraries/ItineraryButton.js";
+import "./weather/WeatherList.js"
 
 StateSelect();
 ParkSelect();

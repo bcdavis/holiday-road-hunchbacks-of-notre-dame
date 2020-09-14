@@ -1,4 +1,5 @@
 import { useAttractions } from "./AttractionProvider.js"
+import { addAttractionDetailsToDOM } from "./AttractionDetails.js"
 
 const eventHub = document.querySelector(".container");
 
@@ -9,25 +10,13 @@ eventHub.addEventListener("click", event => {
         let targetAttraction = useAttractions().find(attraction => {
             return attraction.name === attractionName;
         });
-        const customEvent = new CustomEvent("attractionDetailsToggle", {
-            detail: {
-                name: targetAttraction.name,
-                state: targetAttraction.state,
-                city: targetAttraction.city,
-                description: targetAttraction.description,
-                ameneties: {
-                    souvenirs: targetAttraction.ameneties.souvenirs,
-                    restrooms: targetAttraction.ameneties.restrooms
-                }
-            }
-        })
 
         event.target.textContent = "Hide Details"
-        eventHub.dispatchEvent(customEvent)
+        addAttractionDetailsToDOM(targetAttraction)
 
     } else if (event.target.id === "detailsBtn-attraction" && event.target.textContent === "Hide Details") {
         
-        const detailContent = document.querySelector(".shownDetails-attraction")
+        const detailContent = document.querySelector("#shownDetails-attraction")
         detailContent.innerHTML = ""
         event.target.textContent = "Show Details"
 
@@ -40,7 +29,7 @@ export const AttractionHTML = attractionObj => {
         <div class="indent attraction">
             <h4>${attractionName}</h4>
             <button type="button" class="detailsBtn" id="detailsBtn-attraction">Show Details</button>
-            <div class="shownDetails-attraction"></div>
+            <div class="shownDetails" id="shownDetails-attraction"></div>
         </div>
     `
 }
