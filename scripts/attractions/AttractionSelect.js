@@ -33,7 +33,7 @@ const render = attractionsCollection => {
     const contentTarget = document.querySelector(".attractions-list")
     
     contentTarget.innerHTML = `
-        <select class="dropdown" id="attractionsDropdown">
+        <select class="dropdown offsetCounterBox" id="attractionsDropdown">
             <option value="0">Please select an attraction...</option>
             ${
                 attractionsCollection.map(attractionObj => {
