@@ -13,13 +13,13 @@ export const addAttractionDetailsToDOM = attractionObj => {
         
     }
 
-    const detailsTarget = document.querySelector(".shownDetails")
+    const detailsTarget = document.querySelector("#shownDetails-attraction")
 
     detailsTarget.innerHTML = `
         <p>Location: ${attractionObj.city}, ${attractionObj.state}</p>
         <ul> 
-            <li>Souvenirs: ${attractionObj.amenities.souvenirs}</li>
-            <li>Restrooms: ${attractionObj.amenities.restrooms}</li>
+            <li>Souvenirs: ${attractionObj.ameneties.souvenirs}</li>
+            <li>Restrooms: ${attractionObj.ameneties.restrooms}</li>
         </ul>
         <p class="attractionDescription">"${attractionObj.description}"</p>
     `
