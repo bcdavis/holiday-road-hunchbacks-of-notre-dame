@@ -22,7 +22,6 @@ const renderWeather = (weather) => {
     <ul class="forecastList">
     ${weather
       .map((day) => {
-          console.log("Which day",day)
         return WeatherHTML(day);
       })
       .join("")}

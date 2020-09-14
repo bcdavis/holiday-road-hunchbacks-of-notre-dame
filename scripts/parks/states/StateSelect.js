@@ -21,7 +21,6 @@ const renderStateSelector = (stateCollection) => {
             <option value="0">Please select a state...</option>
             ${
                 stateCollection.map(state => {
-                    console.log(state);
                     return `
                         <option value=${state}>${state}</option> 
                     `
