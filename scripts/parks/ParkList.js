@@ -20,10 +20,6 @@ export const renderParkSection = () => {
     `
 }
 
-// eventHub.addEventListener("attractionDetailsToggle", event => {
-//     addAttractionDetailsToDOM(event.detail)      
-// });
-
 
 // this function adds the selected park to the preview section. 
 // It provides information about the park and the park's weather.

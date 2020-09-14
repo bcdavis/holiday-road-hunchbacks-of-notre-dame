@@ -1,7 +1,5 @@
 /**
- * For parks, these are the things that should be in the details:
- * 
- * This file exports a function which takes in a park object tha thas the park's:
+ * This file exports a function which takes in a park object that has the park's:
  *  - name
  *  - code
  *  - designation (type)
@@ -12,7 +10,6 @@
  * - operating hours
  * - admissions
  * - activities
- * 
  * 
  * 
  * - operating hours: [
@@ -29,8 +26,6 @@
  *              - The name of the specific exception
  *              - The start date of the specific exception 
  *              - The end date of the specific exception
- *      
- * 
  *      ]
  * - Admissions:
  *      - entrance fees:
@@ -38,11 +33,7 @@
  *      - entrance passes: 
  *          - [title, cost, description]
  * - any and all activities listed under an "activities" header
- * 
- * 
- * 
- * 
- * 
+
  */
 
 const eventHub = document.querySelector(".container");

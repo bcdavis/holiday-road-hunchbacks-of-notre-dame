@@ -27,7 +27,6 @@ eventHub.addEventListener("click", event => {
     const parkDetailsTarget = document.querySelector("#shownDetails-park");
     event.target.textContent = "Show Details";
     // clear shownDetails
-    console.log("Go away!");
     parkDetailsTarget.innerHTML = "";
   }
 })
