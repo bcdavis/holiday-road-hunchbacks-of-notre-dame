@@ -7,6 +7,7 @@ eventHub.addEventListener("eateryChosen", (event) => {
   if (event.detail.eateryThatWasChosen !== "0") {
     addEateryToDOM(event.detail);
   } else {
+    contentTarget = document.getElementById("eaterySection");
     contentTarget.innerHTML = "";
   }
 });
@@ -15,7 +16,8 @@ eventHub.addEventListener("eateryDetails", (event) => {
 });
 
 const addEateryDetailsToDOM = (eObj) => {
-  const Ameneties = eObj.ameneties;
+    contentTarget = document.querySelector(".eatery");
+    const Ameneties = eObj.ameneties;
   for (const amenety in Ameneties) {
     let x = Ameneties[amenety];
     Ameneties[amenety] = x
@@ -24,11 +26,11 @@ const addEateryDetailsToDOM = (eObj) => {
       .replace("false", "No");
   }
   contentTarget.innerHTML = `
-    <div class="eatery">
-        <h3>${eObj.name}</h3>
-        <p class="eateryDescription">Description: ${eObj.description}</p>
+    <h4 class="eateryPicked">${eObj.name}</h4>
+        <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
+        <p class="eateryDescription">"${eObj.description}"</p>
         <p>Location: ${eObj.city}, ${eObj.state}</p>
-        <ul>Ameneties: 
+        <ul><u><b>Ameneties</u></b>
         <li>Wifi: ${eObj.ameneties.wifi}</li>
         <li>Restrooms: ${eObj.ameneties.restrooms}</li>
         <li>Pets Allowed: ${eObj.ameneties.pet}</li>
@@ -36,12 +38,11 @@ const addEateryDetailsToDOM = (eObj) => {
         <li>Wheelchair Accessible: ${eObj.ameneties.wheelchair}</li>
         <li>Diaper Facility: ${eObj.ameneties.diaper}</li>
         </ul>
-        <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
     </div>
 `;
 };
 export const renderEaterySection = () => {
-  const domElement = document.querySelector(".previewContainer");
+  const domElement = document.querySelector(".previewContent");
   domElement.innerHTML += ` 
         <section class="mainPreviewSection" id="eaterySection"></section>
     `;
@@ -49,8 +50,10 @@ export const renderEaterySection = () => {
 };
 
 export const addEateryToDOM = (eObj) => {
-  contentTarget.innerHTML = `
-        <h2>Restaurant</h2>
+    contentTarget = document.getElementById("eaterySection");
+      contentTarget.innerHTML = `
+        <h3>Restaurant</h3>
             ${EateryHTML(eObj)}
     `;
 };
+
