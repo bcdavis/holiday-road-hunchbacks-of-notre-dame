@@ -44,6 +44,7 @@ eventHub.addEventListener("click", clickEvent => {
         }
 
         document.querySelector("#saveBtn").disabled = true;
+        document.querySelector("#parksDropdown").disabled = true;
 
     }
 })
