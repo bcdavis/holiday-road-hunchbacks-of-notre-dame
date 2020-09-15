@@ -41,6 +41,12 @@
       "attraction": "Chicken Wire Minnie Pearl",
       "eatery": "DeLuca's",
       "id": 7
+    },
+    {
+      "park": "President William Jefferson Clinton Birthplace Home National Historic Site",
+      "attraction": "Coffee Pot-Shaped Building",
+      "eatery": "Deer Park Tavern",
+      "id": 8
     }
   ]
 }
