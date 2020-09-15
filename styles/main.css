@@ -11,7 +11,7 @@ side of the current element. The parent is translated down and to the
 right and colored with the --accent-Color variable.
 */
 .offsetAccentBox { 
-    transform: translate(8px, 4px); /* move down 8px and to the right 4 px*/
+    transform: translate(6px, 3px); /* move down 8px and to the right 4 px*/
     background-color: var(--accent-Color); /* color box accent green */
 }
 
@@ -22,7 +22,7 @@ an equal value in the opposite direction. This keeps the current element in it's
 original, styled position while the accent is moved. 
 */
 .offsetCounterBox {
-    transform: translate(-8px, -4px); /* move down 8px and to the right 4 px*/
+    transform: translate(-6px, -3px); /* move down 8px and to the right 4 px*/
 }
 
 
@@ -51,7 +51,17 @@ header > img {
     height: 100px;
 }
 
+/* the accent bars in the header */
+.headerAccentDecoration {
+    background-color: var(--accent-Color);
+    height: 5px;
+    flex: 2 1 20%;
+    margin: auto 20px;
+}
+
 header > h1 {
+    min-width: 450px;
+    font-size: 40px;
     padding-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -86,7 +96,13 @@ footer > p {
 .flex-left { 
     display: flex;
     flex-direction: column;
-    flex: 1 6 60%;
+    flex: 6 1 80%;
+}
+
+.flex-left2 { 
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
 }
 
 .itineraryForm { 
@@ -108,6 +124,8 @@ footer > p {
     margin-top: 10px;
     padding-bottom: 4px;
     border-bottom: 3px var(--accent-Color) solid;
+    letter-spacing: 2px;
+    font-weight: 400;
 }
 
 .dropdown {
@@ -122,13 +140,7 @@ footer > p {
     margin-bottom: 50px;
 }
 
-.states-list { 
-    /* border: black dotted 2px; */
-    max-width: 350px;
-    margin: 10px auto;
-}
-
-#statesDropdown { 
+.state-list { 
     /* border: black dotted 2px; */
     max-width: 350px;
     margin: 10px auto;
@@ -148,11 +160,11 @@ footer > p {
 
 
 .eateryDescription {
-   float: right;
-   clear: right;
-   width: 50%;
-   overflow: auto;
-   border: ridge black 1px;
+    float: right;
+    clear: right;
+    width: 50%;
+    overflow: auto;
+    border: ridge black 1px;
 }
 
 .attractions-list {
@@ -177,7 +189,9 @@ footer > p {
     align-self: center;
     padding-bottom: 4px;
     border-bottom: 3px solid var(--accent-Color);
-    overflow: auto;
+    font-weight: 400;
+    letter-spacing: 2px;
+
 }
 
 .previewContent { 
@@ -205,32 +219,42 @@ footer > p {
     display: flex;
 }
 
+.indent {
+    margin-left: 20px;
+}
+
+.detailBtnAccent {
+    width: fit-content;
+}
+
+/* ------------ Park details ------------ */
+
+.feesAndPassesBox {
+    display: flex;
+}
+
+.parkAdmissions > .title {
+    margin: 0;
+    font-weight: bold;
+}
+
+.entranceFees, .entrancePasses {
+    color: black;
+}
+
 .parkInfo {
     /* border: red dotted 2px; */
     /* padding: 5px; */
     flex: 1 1 50%;
 }
 
-.parkWeather {
-    /* border: blue dotted 2px; */
-    padding: 5px;
-    flex: 1 1 50%;
-}
-
-
 .park > h4 {
     margin-top: 5px;
 }
 
-.indent {
-    margin-left: 20px;
-}
 .shownDetails {
-    background-color: lightsalmon;
-}
-.fancyDetails { 
-    border-left: 4px solid var(--accent-Color);
-    padding-left: 20px;
+    font-size: 15px;
+    color: black;
 }
 
 #saveBtn {
@@ -240,28 +264,70 @@ footer > p {
 }
 
 /*--------------- Weather CSS ----------------*/
+.parkWeather {
+    /* border: blue dotted 2px; */
+    margin-left: 5px;
+    flex: 1 1 50%;
+    /* border-left: var(--accent-Color) 2px solid; */
+}
 
+.parkWeather > h3 {
+    margin-top: 0;
+    text-align: center;
 
+}
+
+.forecastList {
+    list-style: none;
+}
+
+.forecastList > li {
+    font-size: 15px;
+}
+
+/* the accent bars in the header */
+.weatherAccentDecoration {
+    background-color: var(--accent-Color);
+    height: 5px;
+    width: 80px;
+}
+
+.forecastList > li > p {
+    margin-bottom: 5px;
+    border-bottom: 2px var(--accent-Color) solid;
+    width: fit-content;
+}
 
 
 /* -------------- Saved Itineraries Aside --------------- */
 
 .flex-right { 
     display: flex;
-    flex: 3 1 40%;
+    flex: 1 2 40%;
     color: white;
 }
+.flex-right2 { 
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
 .savedItineraries {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--accent-Color);
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
     padding: 20px;
     width: 100%;
 }
 
 .savedItineraries > h2 {
     margin: 10px;
+    font-weight: 200;
+    letter-spacing: 2px;
+
 }
 
