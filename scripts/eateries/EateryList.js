@@ -27,7 +27,9 @@ const addEateryDetailsToDOM = (eObj) => {
   }
   contentTarget.innerHTML = `
     <h4 class="eateryPicked">${eObj.name}</h4>
-        <button type="button" class="hideBtn detailsBtn" id="hideBtn-eatery">Hide Details</button>
+    <div class="detailBtnAccent offsetAccentBox">
+        <button type="button" class="hideBtn detailsBtn offsetCounterBox" id="hideBtn-eatery">Hide Details</button>
+    </div>
         <p class="eateryDescription description"><em>${eObj.description}</em></p>
         <p>Location: ${eObj.city}, ${eObj.state}</p>
         <ul><u><b>Ameneties</u></b>
@@ -38,7 +40,6 @@ const addEateryDetailsToDOM = (eObj) => {
         <li>Wheelchair Accessible: ${eObj.ameneties.wheelchair}</li>
         <li>Diaper Facility: ${eObj.ameneties.diaper}</li>
         </ul>
-    </div>
 `;
 };
 export const renderEaterySection = () => {

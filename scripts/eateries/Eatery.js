@@ -33,7 +33,9 @@ eventHub.addEventListener("click", (event) => {
     contentTarget.innerHTML = `<h3>Restaurant</h3>
     <div class="indent eatery">
     <h4>${eObj}</h4>
-    <button type="button" class="detailsBtn" id="detailsBtn-eatery">Show Details</button>
+    <div class="detailBtnAccent offsetAccentBox">
+              <button type="button" class="detailsBtn offsetCounterBox" id="detailsBtn-eatery">Show Details</button>
+    </div>
     </div>`;
   }
 });
