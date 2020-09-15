@@ -5,48 +5,6 @@
       "attraction": "Death Rock of Alexander Hamilton",
       "eatery": "Hancock Inn",
       "id": 1
-    },
-    {
-      "park": "Adams National Historical Park",
-      "attraction": "Elvis Memorial Chapel",
-      "eatery": "Gene & Jude's",
-      "id": 2
-    },
-    {
-      "park": "Adams National Historical Park",
-      "attraction": "Chicken Wire Minnie Pearl",
-      "eatery": "Cattlemen's Steakhouse",
-      "id": 3
-    },
-    {
-      "park": "Abraham Lincoln Birthplace National Historical Park",
-      "attraction": "Avery’s Beverages",
-      "eatery": "Big Bob Gibson Bar-B-Que",
-      "id": 4
-    },
-    {
-      "park": "African Burial Ground National Monument",
-      "attraction": "Coffee Pot-Shaped Building",
-      "eatery": "Commander's Palace",
-      "id": 5
-    },
-    {
-      "park": "Kalaupapa National Historical Park",
-      "attraction": "Chicken Wire Minnie Pearl",
-      "eatery": "El Pinto",
-      "id": 6
-    },
-    {
-      "park": "Coronado National Memorial",
-      "attraction": "Chicken Wire Minnie Pearl",
-      "eatery": "DeLuca's",
-      "id": 7
-    },
-    {
-      "park": "President William Jefferson Clinton Birthplace Home National Historic Site",
-      "attraction": "Coffee Pot-Shaped Building",
-      "eatery": "Deer Park Tavern",
-      "id": 8
     }
   ]
 }

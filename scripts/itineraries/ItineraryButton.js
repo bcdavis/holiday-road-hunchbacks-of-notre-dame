@@ -53,6 +53,8 @@ export const SaveButton = () => {
     const HTMLTarget = document.querySelector(".previewContainer");
     
     HTMLTarget.innerHTML += `
+    <div class="buttonBorder">
         <button type="submit" id="saveBtn" disabled>Save Itinerary</button>
+    </div>
     `
 }
