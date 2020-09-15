@@ -5,10 +5,9 @@ const eventHub = document.querySelector(".container");
 
 eventHub.addEventListener("parkChosen", (event) => {
   if (event.target.value !== "0") {
-    // const lat = event.detail.lat
-    // const long = event.detal.long
-    const long = 123;
-    const lat = 22;
+    const lat = event.detail.lat
+    const long = event.detail.long
+    
     getWeather(lat, long).then((_) => {
       renderWeather(useWeather());
     });

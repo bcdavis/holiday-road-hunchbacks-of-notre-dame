@@ -8,7 +8,7 @@ export const WeatherHTML = (weather) => {
     const pop = Math.round(weather.pop * 100)
     return `
     <li>
-    ${new Date(date).toLocaleDateString("en-US")} -- High: ${Math.round(weather.temp.max)} -- Low: ${Math.round(weather.temp.min)} -- ${pop}% chance of precipitation
+    ${new Date(date).toLocaleDateString("en-US")} -- High: ${Math.round(weather.temp.max)} -- Low: ${Math.round(weather.temp.min)} -- Chance of Precipitation: ${pop}%
     </li>
     `
 }
