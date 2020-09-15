@@ -1,7 +1,7 @@
 export const addAttractionDetailsToDOM = attractionObj => {
 
-    for (const amenity in attractionObj.amenities) {
-        let currentAmenity = attractionObj.amenities[amenity]
+    for (const amenity in attractionObj.ameneties) {
+        let currentAmenity = attractionObj.ameneties[amenity]
         
         if (currentAmenity === true) {
             currentAmenity = "Yes"
@@ -9,18 +9,18 @@ export const addAttractionDetailsToDOM = attractionObj => {
             currentAmenity = "No"
         }
 
-        attractionObj.amenities[amenity] = currentAmenity
+        attractionObj.ameneties[amenity] = currentAmenity
         
     }
 
     const detailsTarget = document.querySelector("#shownDetails-attraction")
 
     detailsTarget.innerHTML = `
+    <p class="description attractionDescription"><em>${attractionObj.description}</em></p>
         <p>Location: ${attractionObj.city}, ${attractionObj.state}</p>
-        <ul> 
+        <ul><u><b>Ameneties</u></b> 
             <li>Souvenirs: ${attractionObj.ameneties.souvenirs}</li>
             <li>Restrooms: ${attractionObj.ameneties.restrooms}</li>
         </ul>
-        <p class="attractionDescription">"${attractionObj.description}"</p>
     `
 };
