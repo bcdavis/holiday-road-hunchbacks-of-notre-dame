@@ -191,6 +191,8 @@ original, styled position while the accent is moved.
     margin: 10px;
     margin-left: 20px;
     min-height: 400px;
+    max-height: 600px;
+    overflow: auto;
 }
 
 .attractionDescription {
@@ -383,9 +385,9 @@ original, styled position while the accent is moved.
 
 .detailsBtn {
     width: 100px;
-    /* background-color: rgb(62, 169, 130); */
-    /* color: white; */
-    /* border-color: rgba(62, 161, 125, .8) */
+    background-color: rgb(62, 169, 130);
+    color: white;
+    border-color: rgba(62, 161, 125, .8)
 }
 
 .detailBtnAccent {
