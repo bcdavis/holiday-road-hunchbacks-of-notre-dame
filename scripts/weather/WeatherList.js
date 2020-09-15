@@ -17,7 +17,7 @@ eventHub.addEventListener("parkChosen", (event) => {
 const renderWeather = (weather) => {
   const contentTarget = document.querySelector(".parkWeather");
   contentTarget.innerHTML = `
-    <h3>5-Day Forecast</h3>
+    <h4>5-Day Forecast</h4>
     <ul class="forecastList">
     ${weather
       .map((day) => {

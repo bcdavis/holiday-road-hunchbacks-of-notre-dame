@@ -44,9 +44,9 @@ const ParkEntranceFeesHTML = (parkObj) => {
     for(const fee of temp){
         feesHTML += `
         <div class="entranceFeeCard">
-            <p class="entranceFeeTitle">${fee.title}</p>
+            <p class="entranceFeeTitle"><em>${fee.title}</em></p>
             <ul>
-                <li class="entranceFeeCost"><strong>Cost:</strong> $${fee.cost}</li>
+                <li class="entranceFeeCost"><strong>Cost:</strong> $${Math.round(parseInt(fee.cost))}</li>
                 <li class="entranceFeeDescription"><strong>Description:</strong> ${fee.description}</li>
             </ul>
         </div>
@@ -64,10 +64,10 @@ const ParkEntrancePassesHTML = (parkObj) => {
         //console.log(pass.title, pass.cost, pass.description);
         passesHTML +=`
         <div class="entrancePassCard">
-            <p class="entrancePassTitle">${pass.title}</p>
+            <p class="entrancePassTitle"><em>${pass.title}</em></p>
             <ul>
-                <li class="entrancePassCost">Cost: $${pass.cost}</li>
-                <li class="entrancePassDescription">Description: ${pass.description}</li>
+                <li class="entrancePassCost"><strong>Cost:</strong> $${Math.round(parseInt(pass.cost))}</li>
+                <li class="entrancePassDescription"><strong>Description:</strong> ${pass.description}</li>
             </ul>
         </div>
         `

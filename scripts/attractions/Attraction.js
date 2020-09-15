@@ -28,7 +28,9 @@ export const AttractionHTML = attractionObj => {
     return `
         <div class="indent attraction">
             <h4>${attractionName}</h4>
-            <button type="button" class="detailsBtn" id="detailsBtn-attraction">Show Details</button>
+            <div class="detailBtnAccent offsetAccentBox">
+                <button type="button" class="detailsBtn offsetCounterBox" id="detailsBtn-attraction">Show Details</button>
+            </div>
             <div class="shownDetails" id="shownDetails-attraction"></div>
         </div>
     `

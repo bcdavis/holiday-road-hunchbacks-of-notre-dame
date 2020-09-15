@@ -43,7 +43,10 @@ export const EateryHTML = (eObj) => {
   return `
         <div class="indent eatery">
             <h4>${eObj.eateryThatWasChosen}</h4>
-            <button type="button" class="detailsBtn" id="detailsBtn-eatery">Show Details</button>
+            <div class="detailBtnAccent offsetAccentBox">
+              <button type="button" class="detailsBtn offsetCounterBox" id="detailsBtn-eatery">Show Details</button>
+            </div>
+          <div class="shownDetails" id="shownDetails-eatery"></div>
         </div>
     `;
 };

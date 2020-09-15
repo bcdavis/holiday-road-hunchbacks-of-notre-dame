@@ -4,6 +4,148 @@
     --accent-Color: rgb(62, 169, 130); /* ---- Custom green accent color ---- */
 }
 
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: 'Monserrat', sans-serif;
+}
+
+header {
+    display: flex;
+    background-color: lightgrey;
+}
+
+header > img {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    width: 90px;
+    height: 90px;
+}
+
+.leftDeco {
+    margin-left: 20px;
+    margin-right: 0px;
+}
+
+.rightDeco {
+    margin-right: 20px;
+    margin-left: 0px;
+}
+
+/* the accent bars in the header */
+.headerAccentDecoration {
+    background-color: var(--accent-Color);
+    height: 5px;
+    flex: 2 1 20%;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+header > h1 {
+    /* border: 5px solid var(--accent-Color); */
+    min-width: 425px;
+    font-size: 40px;
+    /* padding-top: 10px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 5px;
+}
+
+footer { 
+    display: flex;
+    justify-content: center;
+    background-color: lightgrey;
+    height: 90px;
+}
+
+footer > p {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* ------------------------------------ */
+
+
+/* ------------- Main Css ------------- */
+
+.container { 
+    display: flex;
+}
+
+/* ------------- Itinerary creation form CSS ------------- */
+.flex-left { 
+    display: flex;
+    flex-direction: column;
+    flex: 6 1 80%;
+}
+
+.flex-left2 { 
+    display: flex;
+    flex-direction: column;
+    width: 50%
+}
+
+.itineraryForm { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formTitle { 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.formTitle > h2 { 
+    margin-top: 10px;
+    padding-bottom: 4px;
+    border-bottom: 3px var(--accent-Color) solid;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.dropdown {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.selectorContainer { 
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 50px;
+}
+
+.state-list { 
+    max-width: 350px;
+    margin: 10px auto;
+}
+
+.parks-list {
+    max-width: 350px;
+    margin: 10px auto;
+}
+
+.eateries-list {
+    max-width: 350px;
+    margin: 10px auto;
+}
+
+.attractions-list {
+    max-width: 350px;
+    margin: 10px auto;
+}
+
+.eateryDescription {
+    float: right;
+    clear: right;
+    width: 50%;
+    overflow: auto;
+}
 /* 
 The follwoing style affects the parent element of the current element 
 that should have an offset green accent on the bottom and right 
@@ -25,161 +167,12 @@ original, styled position while the accent is moved.
     transform: translate(-6px, -3px); /* move down 8px and to the right 4 px*/
 }
 
-
-
-body, html {
-    height: 86%;
-    margin: 0;
-    padding: 0;
-    /* background: gainsboro; */
-    color: black;
-    font-family: 'Monserrat', sans-serif;
-}
-
-
-header {
-    display: flex;
-    background-color: lightgrey;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    /* color: mediumseagreen; */
-}
-
-header > img {
-    margin-left: 20px;
-    width: 100px;
-    height: 100px;
-}
-
-/* the accent bars in the header */
-.headerAccentDecoration {
-    background-color: var(--accent-Color);
-    height: 5px;
-    flex: 2 1 20%;
-    margin: auto 20px;
-}
-
-header > h1 {
-    min-width: 450px;
-    font-size: 40px;
-    padding-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-footer { 
-    display: flex;
-    justify-content: center;
-    background-color: lightgrey;
-    height: 100px;
-    /* color: mediumseagreen; */
-}
-
-footer > p {
-    margin-top: auto;
-    margin-bottom: auto;
-    /* background-color: purple; */
-
-}
-/* ------------------------------------ */
-
-
-/* ------------- Main Css ------------- */
-
-.container { 
-    /* height: 100%; */
-    /* border: red dotted 2px; */
-    display: flex;
-}
-
-/* ------------- Itinerary creation form CSS ------------- */
-.flex-left { 
-    display: flex;
-    flex-direction: column;
-    flex: 6 1 80%;
-}
-
-.flex-left2 { 
-    display: flex;
-    flex-direction: column;
-    flex-basis: 50%;
-}
-
-.itineraryForm { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* border: green solid 2px; */
-    /* float: left; */
-}
-
-.formTitle { 
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-   
-}
-
-.formTitle > h2 { 
-    margin-top: 10px;
-    padding-bottom: 4px;
-    border-bottom: 3px var(--accent-Color) solid;
-    letter-spacing: 2px;
-    font-weight: 400;
-}
-
-.dropdown {
-    /* transform: translate(-8px, -4px); */
-    width: 100%;
-    margin-bottom: 5px;
-}
-
-.selectorContainer { 
-    width: 100%;
-    padding: 10px 0;
-    margin-bottom: 50px;
-}
-
-.state-list { 
-    /* border: black dotted 2px; */
-    max-width: 350px;
-    margin: 10px auto;
-}
-
-.parks-list {
-    /* border: black dotted 2px; */
-    max-width: 350px;
-    margin: 10px auto;
-}
-
-.eateries-list {
-    /* border: black dotted 2px; */
-    max-width: 350px;
-    margin: 10px auto;
-}
-
-
-.eateryDescription {
-    float: right;
-    clear: right;
-    width: 50%;
-    overflow: auto;
-    border: ridge black 1px;
-}
-
-.attractions-list {
-    /* border: black dotted 2px; */
-    max-width: 350px;
-    margin: 10px auto;
-}
-
 /* ---------------- Preview section ------------------ */
 
 .previewContainer {
-    background-color: rgb(237, 237, 237);
+    /* background-color: rgb(240, 240, 240); */
     display: flex;
     flex-direction: column;
-    /* min-height: 400px; */
     margin: 20px;
     padding-bottom: 10px;
 }
@@ -197,12 +190,18 @@ footer > p {
 .previewContent { 
     margin: 10px;
     margin-left: 20px;
-    /* border-left: 3px solid var(--accent-Color); */
     min-height: 400px;
 }
 
 .attractionDescription {
-    border: ridge black 1px;
+    justify-content: space-between;
+    margin: 20px;
+    height: 100%;
+}
+
+.description {
+    border-left: 2px solid rgb(62, 169, 130);
+    padding-left: 10px;
 }
 
 .mainPreviewSection {
@@ -211,6 +210,7 @@ footer > p {
 }
 
 .mainPreviewSection > h3{
+    font-size: 24px;
     border-bottom: 3px var(--accent-Color) solid;
 }
 
@@ -223,9 +223,6 @@ footer > p {
     margin-left: 20px;
 }
 
-.detailBtnAccent {
-    width: fit-content;
-}
 
 /* ------------ Park details ------------ */
 
@@ -236,20 +233,55 @@ footer > p {
 .parkAdmissions > .title {
     margin: 0;
     font-weight: bold;
+    font-size: 18px;
+    border-top: 2px var(--accent-Color) solid;
 }
 
 .entranceFees, .entrancePasses {
     color: black;
+    padding-left: 2px;
+}
+
+.entranceFees > p, .entrancePasses > p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+}
+
+.entrancePassCard > ul, .entranceFeeCard > ul {
+    margin-top: 2px;
+    padding-inline-start: 20px;
+    list-style: none;
+    border-left: 2px var(--accent-Color) solid;
+}
+
+.entrancePassCard > ul > li, .entranceFeeCard > ul > li{
+    margin-bottom: 4px;
+}
+
+.entranceFeeDescription, .entrancePassDescription {
+    overflow: auto;
+}
+
+.entranceFeeCost, .entrancePassCost {
+   padding-top: 4px;
+}
+
+
+.entranceFeeTitle, .entrancePassTitle {
+    font-weight: 200;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 0px;
 }
 
 .parkInfo {
-    /* border: red dotted 2px; */
-    /* padding: 5px; */
     flex: 1 1 50%;
 }
 
 .park > h4 {
     margin-top: 5px;
+    font-size: 18px;
 }
 
 .shownDetails {
@@ -265,20 +297,22 @@ footer > p {
 
 /*--------------- Weather CSS ----------------*/
 .parkWeather {
-    /* border: blue dotted 2px; */
+    font-weight: 200;
     margin-left: 5px;
-    flex: 1 1 50%;
-    /* border-left: var(--accent-Color) 2px solid; */
+    padding: 5px;
+    flex: 1 1 20%;
 }
 
-.parkWeather > h3 {
+.parkWeather > h4 {
     margin-top: 0;
     text-align: center;
+    font-size: 18px;
 
 }
 
 .forecastList {
     list-style: none;
+    padding-inline-start: 10px;
 }
 
 .forecastList > li {
@@ -293,11 +327,74 @@ footer > p {
 }
 
 .forecastList > li > p {
+    font-size: 16px;
     margin-bottom: 5px;
     border-bottom: 2px var(--accent-Color) solid;
     width: fit-content;
 }
 
+/* ------- Save Itinerary Button --------- */
+
+.buttonBorder {
+    width: 100%;
+    /* background-color: lightgrey; */
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+}
+
+#saveBtn {
+    width: 120px;
+    height: 40px;
+    font-size: 16px;
+    background-color: rgb(62, 169, 130);
+    color: white;
+    border-color: rgba(62, 161, 125, .8)
+}
+
+#saveBtn:disabled {
+    opacity: 50%;
+    border-color: rgba(62, 169, 130, .3)
+}
+
+#saveBtn:hover {
+    background-color: rgba(62, 169, 130, .7);
+}
+
+.description:before {
+    color: rgb(62, 169, 130);
+    content: open-quote;
+    font-style: italic;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.3em;
+}
+
+.description:after {
+    color: rgb(62, 169, 130);
+    content: close-quote;
+    font-style: italic;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-left: 0.25em;
+    vertical-align: -0.6em;
+}
+
+.detailsBtn {
+    width: 100px;
+    /* background-color: rgb(62, 169, 130); */
+    /* color: white; */
+    /* border-color: rgba(62, 161, 125, .8) */
+}
+
+.detailBtnAccent {
+    width: fit-content;
+}
+
+.detailsBtn:focus {
+    outline: 0 !important;
+} 
 
 /* -------------- Saved Itineraries Aside --------------- */
 
@@ -309,7 +406,8 @@ footer > p {
 .flex-right2 { 
     display: flex;
     flex-direction: column;
-    flex-basis: 50%;
+    width: 50%;
+    margin-left: 5px;
 }
 
 .savedItineraries {
@@ -331,3 +429,7 @@ footer > p {
 
 }
 
+.itinerariesList {
+    overflow: auto;
+    height: 100%;
+}

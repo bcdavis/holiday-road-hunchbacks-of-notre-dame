@@ -26,7 +26,7 @@ export const renderParkSection = () => {
 const addParkToDOM = parkObj => {
     const contentTarget = document.querySelector("#parkSection")
     contentTarget.innerHTML = `
-        <h3>Parks</h3>
+        <h3>Park Destination</h3>
         <section class="parkPreview">
             <div class="parkInfo">
                 ${ParkHTML(parkObj)}
