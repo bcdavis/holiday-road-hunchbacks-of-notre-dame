@@ -5,6 +5,24 @@
       "attraction": "Death Rock of Alexander Hamilton",
       "eatery": "Hancock Inn",
       "id": 1
+    },
+    {
+      "park": "Aleutian Islands World War II National Historic Area",
+      "attraction": "Forest of Chainsaw Totem Poles",
+      "eatery": "El Pinto",
+      "id": 2
+    },
+    {
+      "park": "César E. Chávez National Monument",
+      "attraction": "Chicken Wire Minnie Pearl",
+      "eatery": "Club Paris",
+      "id": 3
+    },
+    {
+      "park": "Fort Smith National Historic Site",
+      "attraction": "Chicken Wire Minnie Pearl",
+      "eatery": "Canlis",
+      "id": 4
     }
   ]
 }
