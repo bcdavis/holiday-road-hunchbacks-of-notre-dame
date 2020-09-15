@@ -37,9 +37,7 @@ export const ParkHTML = parkObj => {
   return `
       <div class="indent park">
           <h4>${parkName}</h4>
-          <div class="detailBtnAccent offsetAccentBox">
-            <button type="button" class="detailsBtn offsetCounterBox" id="detailsBtn-park">Show Details</button>
-          </div>
+          <button type="button" class="detailsBtn" id="detailsBtn-park">Show Details</button>
           <div class="shownDetails" id="shownDetails-park"></div>
       </div>
   `

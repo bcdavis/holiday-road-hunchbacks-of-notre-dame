@@ -141,10 +141,16 @@ footer > p {
 }
 
 .eateryDescription {
-    float: right;
-    clear: right;
-    width: 50%;
+    font-size: 15px;
     overflow: auto;
+}
+
+.attraction > h4 {
+    font-size: 18px;
+}
+
+.eatery > h4 {
+    font-size: 18px;
 }
 /* 
 The follwoing style affects the parent element of the current element 
