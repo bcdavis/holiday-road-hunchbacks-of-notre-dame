@@ -17,11 +17,11 @@ eventHub.addEventListener("parkChosen", (event) => {
 const renderWeather = (weather) => {
   const contentTarget = document.querySelector(".parkWeather");
   contentTarget.innerHTML = `
-  <h3>Today</h3>
+  <h4>Today</h4>
   <ul class="forecastList">
   ${WeatherHTML(weather[0])}
   </ul>
-  <h3>5-Day Forecast</h3>
+  <h4>5-Day Forecast</h4>
   `;
   let i = 1;
   while (i < 6) {

@@ -26,6 +26,10 @@ eventHub.addEventListener("change", event => {
 
 eventHub.addEventListener("stateChosen", event => {
     if(event.detail.stateThatWasChosen !== "0"){
+        const parksSectionTarget = document.querySelector("#parkSection")
+        if(parksSectionTarget.innerHTML !== ""){
+            parksSectionTarget.innerHTML = ""; // clear park info in preview seciton b/c state is no longer relevant
+        }
         document.querySelector("#parksDropdown").disabled = false;
         ParkSelect(event.detail.stateThatWasChosen);
     }
@@ -52,9 +56,10 @@ const renderParksSelector = parksCollection => {
         <option value="0">Please select a park...</option>
         ${
             parksCollection.map(parkObj => {
+                if(parkObj.latitude !== "" && parkObj.longitude !== ""){
                 return `
                     <option value="${parkObj.fullName}">${parkObj.fullName}</option> 
-                `
+                `}
             }).join("")
         }
     `;

@@ -36,6 +36,46 @@
 
  */
 
+
+
+const ParkEntranceFeesHTML = (parkObj) => {
+    let temp = parkObj.entranceFees;
+    let feesHTML = "";
+    for(const fee of temp){
+        feesHTML += `
+        <div class="entranceFeeCard">
+            <p class="entranceFeeTitle"><em>${fee.title}</em></p>
+            <ul>
+                <li class="entranceFeeCost"><strong>Cost:</strong> $${Math.round(parseInt(fee.cost))}</li>
+                <li class="entranceFeeDescription"><strong>Description:</strong> ${fee.description}</li>
+            </ul>
+        </div>
+        `
+    }
+
+    return feesHTML;
+}
+
+const ParkEntrancePassesHTML = (parkObj) => {
+    //console.log(parkObj.entrancePasses);
+    let temp = parkObj.entrancePasses;
+    let passesHTML = "";
+    for(const pass of temp){
+        //console.log(pass.title, pass.cost, pass.description);
+        passesHTML +=`
+        <div class="entrancePassCard">
+            <p class="entrancePassTitle"><em>${pass.title}</em></p>
+            <ul>
+                <li class="entrancePassCost"><strong>Cost:</strong> $${Math.round(parseInt(pass.cost))}</li>
+                <li class="entrancePassDescription"><strong>Description:</strong> ${pass.description}</li>
+            </ul>
+        </div>
+        `
+    }
+
+    return passesHTML;
+}
+
 const eventHub = document.querySelector(".container");
 
 // eventHub.addEventListener(, event => {
@@ -50,10 +90,29 @@ const eventHub = document.querySelector(".container");
 
 export const addParkDetailsToDOM = (parkObj) => {
 
-
     const parkDetailsTarget = document.querySelector("#shownDetails-park")
+    let feeListHTML = ParkEntranceFeesHTML(parkObj);
+    let passListHTML = ParkEntrancePassesHTML(parkObj);
 
     parkDetailsTarget.innerHTML = `
-        <p class="parkDescription">"${parkObj.description}"</p>
+        <p class="description parkDescription"><em>${parkObj.description}</em></p>
+
+        <div class="parkAdmissions">
+            <p class="title">Admissions</p>
+            <div class="feesAndPassesBox">
+                <div class="entranceFees flex-left2">
+                    <p>Entrance Fees:</p>
+                    <div class="entranceFeeCardHolder">
+                        ${feeListHTML}
+                    </div>
+                </div>
+                <div class="entrancePasses flex-right2">
+                    <p>Entrance Passes:</p>
+                    <div class="entrancePassCardHolder">
+                        ${passListHTML}
+                    </div>
+                </div>
+            </div>
+        </div>
     `
 };
