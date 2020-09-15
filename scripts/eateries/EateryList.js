@@ -27,8 +27,8 @@ const addEateryDetailsToDOM = (eObj) => {
   }
   contentTarget.innerHTML = `
     <h4 class="eateryPicked">${eObj.name}</h4>
-        <button type="button" class="hideBtn" id="hideBtn-eatery">Hide Details</button>
-        <p class="eateryDescription">"${eObj.description}"</p>
+        <button type="button" class="hideBtn detailsBtn" id="hideBtn-eatery">Hide Details</button>
+        <p class="eateryDescription description"><em>${eObj.description}</em></p>
         <p>Location: ${eObj.city}, ${eObj.state}</p>
         <ul><u><b>Ameneties</u></b>
         <li>Wifi: ${eObj.ameneties.wifi}</li>
