@@ -52,9 +52,10 @@ const renderParksSelector = parksCollection => {
         <option value="0">Please select a park...</option>
         ${
             parksCollection.map(parkObj => {
+                if(parkObj.latitude !== "" && parkObj.longitude !== ""){
                 return `
                     <option value="${parkObj.fullName}">${parkObj.fullName}</option> 
-                `
+                `}
             }).join("")
         }
     `;

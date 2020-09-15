@@ -77,19 +77,17 @@ footer > p {
 /* ------------- Main Css ------------- */
 
 .container { 
-    /* border: red dotted 2px; */
     /* height: 100%; */
     /* border: red dotted 2px; */
     display: flex;
 }
 
-/* ------------- Itinerary creation form and preview secitons CSS ------------- */
+/* ------------- Itinerary creation form CSS ------------- */
 .flex-left { 
     display: flex;
     flex-direction: column;
     flex: 1 6 60%;
 }
-
 
 .itineraryForm { 
     display: flex;
@@ -169,30 +167,9 @@ footer > p {
     background-color: rgb(237, 237, 237);
     display: flex;
     flex-direction: column;
-    /* align-items: left; */
-    /* border: forestgreen solid 2px; */
     /* min-height: 400px; */
     margin: 20px;
     padding-bottom: 10px;
-
-}
-
-.attractionDescription {
-    /* transform: translate(0px,-100px); */
-    /* float: right; */
-    /* clear: right; */
-    /* width: 50%; */
-    /* overflow: auto; */
-    border: ridge black 1px;
-}
-
- .mainPreviewSection {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.mainPreviewSection > h3{
-    border-bottom: 3px var(--accent-Color) solid;
 }
 
 .previewContainer > h2 { 
@@ -210,10 +187,23 @@ footer > p {
     min-height: 400px;
 }
 
+.attractionDescription {
+    border: ridge black 1px;
+}
+
+.mainPreviewSection {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.mainPreviewSection > h3{
+    border-bottom: 3px var(--accent-Color) solid;
+}
+
+
 .parkPreview {
     display: flex;
 }
-
 
 .parkInfo {
     /* border: red dotted 2px; */
@@ -227,18 +217,17 @@ footer > p {
     flex: 1 1 50%;
 }
 
-.indent {
-    margin-left: 20px;
-}
 
 .park > h4 {
     margin-top: 5px;
 }
 
+.indent {
+    margin-left: 20px;
+}
 .shownDetails {
     background-color: lightsalmon;
 }
-
 .fancyDetails { 
     border-left: 4px solid var(--accent-Color);
     padding-left: 20px;
@@ -248,8 +237,11 @@ footer > p {
     align-self: center;
     width: 100px;
     /* background-color: var(--accent-Color); */
-
 }
+
+/*--------------- Weather CSS ----------------*/
+
+
 
 
 /* -------------- Saved Itineraries Aside --------------- */
